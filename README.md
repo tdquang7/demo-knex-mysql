@@ -6,8 +6,10 @@ $ sudo docker-compose up --build db
 $ sudo docker-compose up --build server
 
 # Chạy migration & seed với knex trong một tab thứ ba
-$ sudo docker-compose exec server /bin/bash
-$ knex migrate:latest
+$ sudo docker-compose exec server /bin/bash  
+
+$ knex migrate:latest  
+
 $ knex seed:run
 
 # Kiểm tra thành quả ở localhost:3001
