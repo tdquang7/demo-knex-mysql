@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7.24
+    ports: 
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: sgtimes
+  server:
+    depends_on:
+      - db
+    build: ./server
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+    command: "yarn start"
